@@ -77,3 +77,15 @@ mutation CreateBook($book: BookInput!) {
   ]
 }
  ```
+
+
+```
+mutation CreateBook1 {
+  addBook(book: {title: "book4", pages: 53, author: "el otro"}) {
+    id
+    title
+    author
+    
+  }
+}
+```
