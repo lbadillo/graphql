@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "77335071-cde5-4d75-84a9-71f0d64bf15c",
+		"name": "graphqlclient",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "349862"
+	},
+	"item": [
+		{
+			"name": "getBooks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "header1",
+						"value": "miprimo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"originCurrency\": \"USD\",\n    \"finalCurrency\": \"PEN\"\n    \n}"
+				},
+				"url": {
+					"raw": "http://localhost:7003/api/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7003",
+					"path": [
+						"api",
+						"book"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "pedrp",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Book1\",\n    \"pages\": 484,\n    \"author\": \"perra\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7003/api/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7003",
+					"path": [
+						"api",
+						"book"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

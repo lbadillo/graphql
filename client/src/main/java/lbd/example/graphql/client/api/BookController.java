@@ -1,9 +1,12 @@
 package lbd.example.graphql.client.api;
 
 import lbd.example.graphql.client.model.Book;
+import lbd.example.graphql.client.model.BookInput;
 import lbd.example.graphql.client.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
@@ -19,5 +22,10 @@ public class BookController {
     @GetMapping("/book")
     Mono<List<Book>> getBooks() {
         return service.getBooks();
+    }
+
+    @PostMapping("/book")
+    Mono<Book> addBook(@RequestBody BookInput book) {
+        return service.addBook(book);
     }
 }

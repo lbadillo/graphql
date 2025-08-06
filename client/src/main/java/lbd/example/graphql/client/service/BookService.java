@@ -1,10 +1,10 @@
 package lbd.example.graphql.client.service;
 
 import lbd.example.graphql.client.model.Book;
+import lbd.example.graphql.client.model.BookInput;
 import lombok.RequiredArgsConstructor;
 import org.springframework.graphql.client.HttpGraphQlClient;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
@@ -21,6 +21,7 @@ public class BookService {
                     id
                     title
                     pages
+                    author
                     reviews {
                       id
                       title
@@ -29,9 +30,28 @@ public class BookService {
                   }
                 }
                 """;
+
         return httpGraphQlClient.document(book)
                 .retrieve("findAllBooks")
                 .toEntityList(Book.class);
+
+    }
+
+    public Mono<Book> addBook(BookInput bookInput) {
+        String create = """
+                mutation CreateBook($book: BookInput!) {
+                  addBook(book: $book) {
+                    id
+                    title
+                    author
+                    pages
+                  }
+                }
+                """;
+        return httpGraphQlClient.document(create)
+                .variable("book",bookInput)
+                .retrieve("addBook")
+                .toEntity(Book.class);
 
     }
 
