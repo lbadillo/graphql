@@ -1,10 +1,10 @@
-package lbd.example.graphql.service;
+package lbd.example.graphql.server.service;
 
-import lbd.example.graphql.entity.Book;
-import lbd.example.graphql.mapper.BookMapper;
-import lbd.example.graphql.model.BookInputDTO;
-import lbd.example.graphql.model.BookResponseDTO;
-import lbd.example.graphql.repository.BookRepository;
+import lbd.example.graphql.server.entity.Book;
+import lbd.example.graphql.server.mapper.BookMapper;
+import lbd.example.graphql.server.model.BookInputDTO;
+import lbd.example.graphql.server.model.BookResponseDTO;
+import lbd.example.graphql.server.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.stereotype.Service;
@@ -22,8 +22,7 @@ public class BookService {
     public List<BookResponseDTO> findAllBooks() {
         List<Book> books = bookRepository.findAll();
         return books.stream().map(bookMapper::bookToBookResponseDTO
-                //    book.getReviews().stream().map(bookMapper::reviewToDTO)
-                //    bookMapper.reviewToDTO(book.)
+
         ).collect(Collectors.toList());
 
     }

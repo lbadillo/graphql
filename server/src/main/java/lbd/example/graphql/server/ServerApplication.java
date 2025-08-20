@@ -1,14 +1,7 @@
-package lbd.example.graphql;
+package lbd.example.graphql.server;
 
-import lbd.example.graphql.entity.Book;
-import lbd.example.graphql.entity.Review;
-import lbd.example.graphql.repository.BookRepository;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import java.util.List;
 
 @SpringBootApplication
 public class ServerApplication {
@@ -17,7 +10,7 @@ public class ServerApplication {
 		SpringApplication.run(ServerApplication.class, args);
 	}
 
-	@Bean
+/*	@Bean
 	CommandLineRunner commandLineRunner(BookRepository repository) {
 		return args-> {
 			Book reactiveSpring = new Book("Book1", 484, "Josh Long");
@@ -27,5 +20,5 @@ public class ServerApplication {
 			repository.save(reactiveSpring);
 		};
 	}
-
+*/
 }

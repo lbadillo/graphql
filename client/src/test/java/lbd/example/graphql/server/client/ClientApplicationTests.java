@@ -1,10 +1,10 @@
-package lbd.example.graphql;
+package lbd.example.graphql.server.client;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MutationsApplicationTests {
+class ClientApplicationTests {
 
 	@Test
 	void contextLoads() {

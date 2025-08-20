@@ -1,4 +1,4 @@
-package lbd.example.graphql.model;
+package lbd.example.graphql.server.model;
 
 
 import lombok.Builder;

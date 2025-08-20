@@ -1,8 +1,8 @@
-package lbd.example.graphql.mapper;
+package lbd.example.graphql.server.mapper;
 
-import lbd.example.graphql.entity.Book;
-import lbd.example.graphql.model.BookInputDTO;
-import lbd.example.graphql.model.BookResponseDTO;
+import lbd.example.graphql.server.entity.Book;
+import lbd.example.graphql.server.model.BookInputDTO;
+import lbd.example.graphql.server.model.BookResponseDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 

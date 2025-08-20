@@ -1,4 +1,4 @@
-package lbd.example.graphql.entity;
+package lbd.example.graphql.server.entity;
 
 
 import jakarta.persistence.Entity;
